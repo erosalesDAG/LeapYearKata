@@ -27,18 +27,22 @@ namespace LeapYearKata.Tests
             Assert.False(result);
         }
 
-        [Test]
-        public void ReturnTrueIfDivisibleBy100()
+        [TestCase(500)]
+        [TestCase(100)]
+        [TestCase(1500)]
+        public void ReturnTrueIfDivisibleBy100(int year)
         {
             LeapYear leapYear = new LeapYear();
-            var result = leapYear.IsDivisibleBy100(500); 
+            var result = leapYear.IsDivisibleBy100(year); 
             Assert.True(result);
         }
-        [Test]
-        public void ReturnFalseIfNotDivisibleBy100()
+        [TestCase(501)]
+        [TestCase(750)]
+        [TestCase(1492)]
+        public void ReturnFalseIfNotDivisibleBy100(int year)
         {
             LeapYear leapYear = new LeapYear();
-            var result = leapYear.IsDivisibleBy100(501);
+            var result = leapYear.IsDivisibleBy100(year);
             Assert.False(result);
         }
     }
