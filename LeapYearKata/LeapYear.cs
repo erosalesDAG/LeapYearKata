@@ -9,6 +9,6 @@ public class LeapYear
 
     public bool IsDivisibleBy100(int i)
     {
-        return true;
+        return i % 100 == 0;
     }
 }

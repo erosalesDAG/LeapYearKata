@@ -34,5 +34,12 @@ namespace LeapYearKata.Tests
             var result = leapYear.IsDivisibleBy100(500); 
             Assert.True(result);
         }
+        [Test]
+        public void ReturnFalseIfNotDivisibleBy100()
+        {
+            LeapYear leapYear = new LeapYear();
+            var result = leapYear.IsDivisibleBy100(501);
+            Assert.False(result);
+        }
     }
 }
