@@ -2,9 +2,12 @@ namespace LeapYearKata.Tests
 {
     public class LeapYearShould
     {
+        private LeapYear leapYear;
+
         [SetUp]
         public void Setup()
         {
+            leapYear = new LeapYear();
         }
 
         [TestCase(4)]
@@ -12,8 +15,7 @@ namespace LeapYearKata.Tests
         [TestCase(512)]
         public void ReturnTrueIfDivisibleBy4(int year)
         {
-            LeapYear leapyear = new LeapYear();
-            var result = leapyear.IsDivisibleBy4(year);
+            var result = leapYear.IsDivisibleBy4(year);
             Assert.True(result);
         }
 
@@ -22,8 +24,7 @@ namespace LeapYearKata.Tests
         [TestCase(57)]
         public void ReturnFalseIfNotDivisibleBy4(int year)
         {
-            LeapYear leapyear = new LeapYear();
-            var result = leapyear.IsDivisibleBy4(year);
+            var result = leapYear.IsDivisibleBy4(year);
             Assert.False(result);
         }
 
@@ -32,16 +33,15 @@ namespace LeapYearKata.Tests
         [TestCase(1500)]
         public void ReturnTrueIfDivisibleBy100(int year)
         {
-            LeapYear leapYear = new LeapYear();
             var result = leapYear.IsDivisibleBy100(year); 
             Assert.True(result);
         }
+
         [TestCase(501)]
         [TestCase(750)]
         [TestCase(1492)]
         public void ReturnFalseIfNotDivisibleBy100(int year)
         {
-            LeapYear leapYear = new LeapYear();
             var result = leapYear.IsDivisibleBy100(year);
             Assert.False(result);
         }
