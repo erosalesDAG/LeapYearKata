@@ -22,7 +22,7 @@ namespace LeapYearKata.Tests
         [TestCase(5)]
         [TestCase(21)]
         [TestCase(57)]
-        public void CheckYearIsNoDivisibleBy4(int year)
+        public void CheckYearIsNotDivisibleBy4(int year)
         {
             var result = leapYear.IsDivisibleBy4(year);
             Assert.False(result);
@@ -40,12 +40,17 @@ namespace LeapYearKata.Tests
         [TestCase(501)]
         [TestCase(750)]
         [TestCase(1492)]
-        public void CheckYearIsNoDivisibleBy100(int year)
+        public void CheckYearIsNotDivisibleBy100(int year)
         {
             var result = leapYear.IsDivisibleBy100(year);
             Assert.False(result);
         }
 
-
+        [Test]
+        public void CheckYearIsDivisibleBy400()
+        {
+            var result = leapYear.IsDivisibleBy400(400);
+            Assert.True(result);
+        }
     }
 }

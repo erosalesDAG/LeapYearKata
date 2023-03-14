@@ -11,4 +11,9 @@ public class LeapYear
     {
         return i % 100 == 0;
     }
+
+    public bool IsDivisibleBy400(int year)
+    {
+        return  true;
+    }
 }
