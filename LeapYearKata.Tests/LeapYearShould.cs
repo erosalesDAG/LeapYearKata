@@ -58,7 +58,7 @@ namespace LeapYearKata.Tests
         [Test]
         public void IsLeapYearIfDivisibleBy4AndNotBy100()
         {
-            var result = leapYear.IsLeapYear(4);
+            var result = leapYear.IsLeapYear(120);
             Assert.True(result);
         }
     }
