@@ -2,8 +2,8 @@ namespace LeapYearKata;
 
 public class LeapYear
 {
-    public bool isDivisibleBy4()
+    public bool isDivisibleBy4(int year)
     {
-        return true;
+        return year % 4 == 0;
     }
 }
