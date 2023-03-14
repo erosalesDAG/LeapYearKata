@@ -14,5 +14,13 @@ namespace LeapYearKata.Tests
             var result = leapyear.isDivisibleBy4(4);
             Assert.True(result);
         }
+
+        [Test]
+        public void returnFalseIfNotDivisibleBy4()
+        {
+            LeapYear leapyear = new LeapYear();
+            var result = leapyear.isDivisibleBy4(5);
+            Assert.False(result);
+        }
     }
 }
