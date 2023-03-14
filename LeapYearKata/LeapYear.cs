@@ -14,11 +14,21 @@ public class LeapYear
 
     public bool IsDivisibleBy400(int year)
     {
-        return  year % 400 == 0;
+        return year % 400 == 0;
     }
 
     public bool IsLeapYear(int year)
     {
-        return true;
+        if (!IsDivisibleBy4(year))
+        {
+            return false;
+        }
+
+        if (IsDivisibleBy4(year) && !IsDivisibleBy100(year))
+        {
+            return true;
+        }
+
+        return false;
     }
 }
