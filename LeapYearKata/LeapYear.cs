@@ -1,3 +1,5 @@
+using System.Transactions;
+
 namespace LeapYearKata;
 
 public class LeapYear
@@ -28,6 +30,12 @@ public class LeapYear
         {
             return true;
         }
+
+        if (IsDivisibleBy400(year))
+        {
+            return true;
+        }
+
 
         return false;
     }
