@@ -36,6 +36,10 @@ public class LeapYear
             return true;
         }
 
+        if (IsDivisibleBy100(year) && !IsDivisibleBy400(year))
+        {
+            return false;
+        }
 
         return false;
     }

@@ -81,5 +81,15 @@ namespace LeapYearKata.Tests
             var result = leapYear.IsLeapYear(year);
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [TestCase(1900, false)]
+        [TestCase(2000, true)]
+        [TestCase(1600, true)]
+        [TestCase(2100, false)]
+        public void CheckIsNotLeapYearIfDivisibleBy100ButNotBy400(int year, bool expectedResult)
+        {
+            var result = leapYear.IsLeapYear(year);
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }
