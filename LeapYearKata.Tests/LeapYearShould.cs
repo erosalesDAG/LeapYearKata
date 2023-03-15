@@ -62,11 +62,13 @@ namespace LeapYearKata.Tests
             Assert.True(result);
         }
 
-        [Test]
-        public void CheckItIsNotLeapYearIfNotDivisibleBy4()
+        [TestCase(5,false)]
+        [TestCase(4,true)]
+        [TestCase(19,false)]
+        public void CheckItIsNotLeapYearIfNotDivisibleBy4(int year, bool expectedResult)
         {
-            var result = leapYear.IsLeapYear(5);
-            Assert.False(result);
+            var result = leapYear.IsLeapYear(year);
+            Assert.That(result,Is.EqualTo(expectedResult));
         }
     }
 }
