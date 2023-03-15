@@ -33,7 +33,7 @@ namespace LeapYearKata.Tests
         [TestCase(1500)]
         public void CheckYearIsDivisibleBy100(int year)
         {
-            var result = leapYear.IsDivisibleBy100(year); 
+            var result = leapYear.IsDivisibleBy100(year);
             Assert.True(result);
         }
 
@@ -55,20 +55,22 @@ namespace LeapYearKata.Tests
             Assert.True(result);
         }
 
-        [Test]
-        public void CheckIsLeapYearIfDivisibleBy4AndNotBy100()
+        [TestCase(2000, false)]
+        [TestCase(2020, true)]
+        [TestCase(1900, false)]
+        public void CheckIsLeapYearIfDivisibleBy4AndNotBy100(int year, bool expectedResult)
         {
-            var result = leapYear.IsLeapYear(120);
-            Assert.True(result);
+            var result = leapYear.IsLeapYear(year);
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
 
-        [TestCase(5,false)]
-        [TestCase(4,true)]
-        [TestCase(19,false)]
+        [TestCase(5, false)]
+        [TestCase(4, true)]
+        [TestCase(19, false)]
         public void CheckItIsNotLeapYearIfNotDivisibleBy4(int year, bool expectedResult)
         {
             var result = leapYear.IsLeapYear(year);
-            Assert.That(result,Is.EqualTo(expectedResult));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }
